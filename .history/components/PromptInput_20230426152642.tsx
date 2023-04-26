@@ -2,14 +2,13 @@
 import fetchSuggestionFromChatGPT from "@/lib/fetchSuggestionFromChatGPT";
 import { useState } from "react"
 import useSWR from "swr"
+import { revalidateEvents } from "swr/_internal";
 
 function PromptInput() {
     const [input, setInput] = useState("");
 
-    const {data: suggestion, isLoading, mutate, isValidating} = useSWR('/api/suggestion', fetchSuggestionFromChatGPT, 
-    {
-        revalidateOnFocus: false,
-    });
+    const {data, error, isLoading} = useSWR('/api/suggestion', fetchSuggestionFromChatGPT, 
+    revalidateEvents);
             
   return (
     <div className="m-10">
