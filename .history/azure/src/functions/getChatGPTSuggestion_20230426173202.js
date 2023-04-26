@@ -1,5 +1,5 @@
 const { app } = require("@azure/functions");
-const openai = require("../../lib/fetchSuggestionFromChatGPT");
+const openai = require("../../../lib/fetchSuggestionFromChatGPT");
 
 app.http("getChatGPTSuggestion", {
   methods: ["GET"],
@@ -15,8 +15,8 @@ app.http("getChatGPTSuggestion", {
 
     context.log(`Http function processed request for url "${request.url}"`);
 
-    const responseText = response.data.choices[0].text;
+    const responseText = response.data
 
-    return { body: responseText };
+    return { body: `Hello, world!!!` };
   },
 });

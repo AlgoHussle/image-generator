@@ -1,7 +1,7 @@
 export async function GET(request: Request) {
 
     // connect to Microsft Azure Function Endpoint
-    const response = await fetch('http://localhost:7071/api/getChatGPTSuggestion', {
+    const response = await fetch('', {
         cache: 'no-store'
     })
      

@@ -1,5 +1,5 @@
 const { app } = require("@azure/functions");
-const openai = require("../../lib/fetchSuggestionFromChatGPT");
+const openai = require("../../../lib/fetchSuggestionFromChatGPT");
 
 app.http("getChatGPTSuggestion", {
   methods: ["GET"],

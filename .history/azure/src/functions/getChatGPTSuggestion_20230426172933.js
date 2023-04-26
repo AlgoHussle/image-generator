@@ -1,5 +1,5 @@
 const { app } = require("@azure/functions");
-const openai = require("../../lib/fetchSuggestionFromChatGPT");
+const openai = require("../../../lib/fetchSuggestionFromChatGPT");
 
 app.http("getChatGPTSuggestion", {
   methods: ["GET"],
@@ -9,14 +9,13 @@ app.http("getChatGPTSuggestion", {
       model: "text-davinci-003",
       prompt:
         "Write a random text prompt for DALL•E to generate an image, this prompt will be shown to the use, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white etc. Do not wrap the answer in quotes",
-        maxTokens: 100,
-        temperature: 0.8,
+        maxTokens: 64,
     });
 
     context.log(`Http function processed request for url "${request.url}"`);
 
-    const responseText = response.data.choices[0].text;
+    const name = request.query.get("name") || (await request.text()) || "world";
 
-    return { body: responseText };
+    return { body: `Hello, ${name}!` };
   },
 });

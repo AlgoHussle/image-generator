@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "WEBSITE_NODE_DEFAULT_VERSION": "~18",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "Defa"
+  }
+}
