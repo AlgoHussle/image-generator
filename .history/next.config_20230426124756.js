@@ -3,9 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  images:{
-    domains: ['links.papareact.com'],
-  }
+  
 }
 
 

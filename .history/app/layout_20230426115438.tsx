@@ -1,6 +1,4 @@
-import Header from '@/components/Header'
 import '../styles/globals.css'
-
 
 
 export const metadata = {
@@ -16,13 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        {/* Header */}
-        <Header />
-
-        {/* Prompt Input */}
-
-        {children}
-      </body>
+        {children}</body>
     </html>
   )
 }
